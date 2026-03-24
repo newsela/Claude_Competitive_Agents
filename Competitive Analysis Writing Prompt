@@ -4,6 +4,9 @@ You are generating a competitive intelligence PDF for [PRODUCT NAME] using Repor
 The output file must be named [ProductName]_Overview.pdf and saved in the 
 [ProductName]/ folder alongside the screenshots you captured.
 
+Go to [URL]
+Login with [username & password or tell it to use google auth]
+
 COPY THE CODE ARCHITECTURE EXACTLY from:
   NoRedInk_Expert_Report.md
 
