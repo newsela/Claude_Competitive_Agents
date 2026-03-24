@@ -24,6 +24,30 @@ Review Newsela_Main_App_Product_Overview.md
 Do not deviate from the structure of the relevant reference file.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TARGET LENGTH AND BUDGET — COMPETITIVE MODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPETITIVE reports must be 10–14 pages. Treat this as a hard budget.
+Violating this budget is a failure condition — generate concisely by default.
+
+SCREENSHOT BUDGET: max 6 screenshots total for a COMPETITIVE report.
+  • Pick the 6 most illustrative screenshots. Do not include every screenshot captured.
+  • Prefer screenshots that show unique or differentiating UI (not generic menus).
+  • Never include more than 2 screenshots in HOW IT WORKS.
+
+SECTION LENGTH BUDGET:
+  • HOW IT WORKS    → 1 compact product-area overview table + 2 screenshots. No sub_header per area.
+  • KEY STRENGTHS   → 4–6 items maximum, each as sub_header + 2–3 sentence body paragraph.
+  • KNOWN LIMITATIONS → 4–6 items maximum, same format.
+  • AI section      → See AI SECTION RULES below.
+  • FREE VS. PREMIUM → 1 pricing table + 1 screenshot. No extra prose.
+
+AVOID PAGE BLOAT:
+  • Do not use PageBreak() between adjacent short sections.
+  • Do not use a sub_header + body paragraph for every bullet — only for named KEY STRENGTHS
+    and KNOWN LIMITATIONS items. All other lists use bullet_style.
+  • Do not repeat information across sections. State each fact once.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. COLOR PALETTE — REQUIRED RULES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Define two brand colors:
