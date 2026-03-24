@@ -26,25 +26,33 @@ Do not deviate from the structure of the relevant reference file.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 TARGET LENGTH AND BUDGET — COMPETITIVE MODE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-COMPETITIVE reports must be 10–14 pages. Treat this as a hard budget.
-Violating this budget is a failure condition — generate concisely by default.
+COMPETITIVE reports must be 12–15 pages. This is a target, not a ceiling.
+Under-length (< 10 pages) is as much a failure as over-length (> 18 pages).
+The NoRedInk reference script produces ~13 pages with ~15 screenshots — use that
+as the density benchmark, not a spartan summary.
 
-SCREENSHOT BUDGET: max 6 screenshots total for a COMPETITIVE report.
-  • Pick the 6 most illustrative screenshots. Do not include every screenshot captured.
-  • Prefer screenshots that show unique or differentiating UI (not generic menus).
-  • Never include more than 2 screenshots in HOW IT WORKS.
+SCREENSHOTS: Include all screenshots that illustrate a distinct UI state or
+differentiating feature. The NoRedInk reference uses ~15 screenshots.
+  • Every major product area should have at least 1 screenshot.
+  • Key differentiating features (AI, unique tabs, unique flows) should have 2–3.
+  • Use side_by_side() for pairs to conserve vertical space.
+  • Prefer screenshots that show unique or differentiating UI over generic menus.
+  • Do NOT cap at 6 — that was an error. Match the density of the reference script.
 
-SECTION LENGTH BUDGET:
-  • HOW IT WORKS    → 1 compact product-area overview table + 2 screenshots. No sub_header per area.
-  • KEY STRENGTHS   → 4–6 items maximum, each as sub_header + 2–3 sentence body paragraph.
-  • KNOWN LIMITATIONS → 4–6 items maximum, same format.
-  • AI section      → See AI SECTION RULES below.
-  • FREE VS. PREMIUM → 1 pricing table + 1 screenshot. No extra prose.
+SECTION DEPTH:
+  • HOW IT WORKS — cover every major product area with label_style + bullets + screenshots.
+    Use a product-area overview table only as a quick-reference lead-in, not as a replacement
+    for substantive coverage. Each area that competes with Newsela deserves its own subsection.
+  • KEY STRENGTHS — 5–9 items as bullet_style "• **Title** — explanation" (one line each).
+    Do NOT use sub_header + paragraph per item — that inflates page count without adding value.
+  • KNOWN LIMITATIONS — same bullet_style format, 5–8 items.
+  • AI section — see AI SECTION RULES below.
+  • FREE VS. PREMIUM — pricing table + 1 screenshot + brief intro paragraph.
 
-AVOID PAGE BLOAT:
-  • Do not use PageBreak() between adjacent short sections.
-  • Do not use a sub_header + body paragraph for every bullet — only for named KEY STRENGTHS
-    and KNOWN LIMITATIONS items. All other lists use bullet_style.
+AVOID PAGE BLOAT (these caused the 37-page failure):
+  • Do NOT use PageBreak() between adjacent sections — let content flow naturally.
+  • Do NOT use sub_header + body paragraph per KEY STRENGTH or KNOWN LIMITATION item.
+    Use bullet_style "• **Title** — explanation" instead (as NoRedInk does).
   • Do not repeat information across sections. State each fact once.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
