@@ -4,7 +4,10 @@ You are generating a product PDF using ReportLab. Set the MODE variable at the t
 of the script before writing anything else:
 
   MODE = "COMPETITIVE"       # competitor analysis vs. Newsela
-  MODE = "NEWSELA_OVERVIEW"  # documenting Newsela itself (main app or Writing)
+  MODE = "NEWSELA_OVERVIEW"  # documenting Newsela itself (main app)
+
+Login to [competitor url]
+Use the [username & password or google auth]
 
 Output file: [ProductName]_Overview.pdf
 Saved in:    [ProductName]/ folder alongside screenshots
@@ -14,6 +17,8 @@ CANONICAL REFERENCE IMPLEMENTATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 COMPETITIVE mode → copy architecture from:
 NoRedInk_Expert_Report.md
+
+Review Newsela_Main_App_Product_Overview.md
 
 
 Do not deviate from the structure of the relevant reference file.
