@@ -7,7 +7,7 @@ of the script before writing anything else:
   MODE = "NEWSELA_OVERVIEW"  # documenting Newsela itself (main app)
 
 Login to [competitor url]
-Use the [username & password or google auth]
+Use the [username &password or google auth]
 
 Output file: [ProductName]_Overview.pdf
 Saved in:    [ProductName]/ folder alongside screenshots
@@ -23,8 +23,9 @@ Review Newsela_Main_App_Product_Overview.md
 
 Do not deviate from the structure of the relevant reference file.
 
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TARGET LENGTH AND BUDGET — COMPETITIVE MODE
+TARGET LENGTH AND DENSITY — COMPETITIVE MODE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 COMPETITIVE reports must be 12–15 pages. This is a target, not a ceiling.
 Under-length (< 10 pages) is as much a failure as over-length (> 18 pages).
@@ -56,44 +57,57 @@ AVOID PAGE BLOAT (these caused the 37-page failure):
   • Do not repeat information across sections. State each fact once.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. COLOR PALETTE — REQUIRED RULES
+1. COLOR PALETTE — FIXED, PRE-VERIFIED (DO NOT INVENT NEW COLORS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Define two brand colors:
-  BRAND_DARK   = the product's primary dark color (section banners, title)
-  BRAND_ACCENT = the product's highlight/action color (HR line, callout accent bar)
+All colors below are pre-verified for WCAG 2.1 AA. Use them exactly as specified.
+Do NOT invent new hex values. Do NOT try to match competitor brand colors.
+No contrast calculation is required — it has already been done.
 
-NEWSELA_OVERVIEW mode uses this fixed palette (do not override):
-  BRAND_BLUE   = #1E3A8A   (~13:1 on white)   — section headers, titles
-  DARK_TEAL    = #0369A1   (~7.2:1 on white)  — KEY INSIGHT callouts, body text
-  LUNA_PURPLE  = #6D28D9   (~7.6:1 on white)  — LUNA callouts
-  DARK_GRAY    = #334155   (~10.4:1 on white)  — body text
-  ACCENT_GREEN = #065F46   (~10.8:1 on white)  — NOTE callouts
-  SLATE_600    = #475569   (~7.2:1 on white)   — captions
+── COMPETITIVE MODE — use these exact values ────────────────────────────────
+
+  NAVY   = #1B3A6B   (~10:1 on white)  — section banners, facts col 0, title
+  RED    = #C0392B   (~5.9:1 on white) — label text, callout accent bar, title sub
+  LTGRAY = #F4F6F8                     — alternating row backgrounds
+  MGRAY  = #D0D5DD                     — grid lines, HR lines
+  DKGRAY = #344054   (~12:1 on white)  — all body and table cell text
+  AMBER  = #FFF8E1                     — callout backgrounds
+  HINT   = #98A2B3                     — footer text (decorative/small use only)
+  SUBDUE = #667085   (~5.7:1 on white) — captions
+
+  RED on AMBER background: ~5.5:1 ✓
+  DKGRAY on AMBER background: ~9.8:1 ✓
+  WHITE on NAVY background: ~10:1 ✓
+
+  These are the exact values from generate_noredink_pdf.py, except RED is
+  darkened from #E8274B to #C0392B to ensure 4.5:1 compliance on white.
+
+── NEWSELA_OVERVIEW MODE — use these exact values ───────────────────────────
+
+  BRAND_BLUE   = #1E3A8A   (~13:1 on white)  — section headers, titles
+  DARK_TEAL    = #0369A1   (~7.2:1 on white) — KEY INSIGHT callouts
+  LUNA_PURPLE  = #6D28D9   (~7.6:1 on white) — LUNA callouts
+  DARK_GRAY    = #334155   (~10.4:1 on white) — body text
+  ACCENT_GREEN = #065F46   (~10.8:1 on white) — NOTE callouts
+  SLATE_600    = #475569   (~7.2:1 on white)  — captions
   BRAND_TEAL   = #0EA5E9   (~3.3:1 on white)  — DECORATIVE / BACKGROUNDS ONLY
-
-WCAG 4.5:1 CONTRAST IS MANDATORY on all text. Before writing any style:
-  - Compute luminance for every text/background pair using the sRGB formula
-  - If BRAND_ACCENT on white < 4.5:1, define BRAND_TEXT = a darker shade that passes,
-    and use BRAND_TEXT for ALL text; reserve BRAND_ACCENT for decorative elements only
-    (HR lines, table backgrounds, left-bar accents, colored circles)
-  - Never use a color for text that you haven't verified passes 4.5:1
-
-Required neutral colors (use these exact hex values):
-  LTGRAY = #F4F6F8   MGRAY = #D0D5DD   DKGRAY = #344054
-  CGRAY  = #667085   AMBER = #FFF8E1
+  LIGHT_GRAY   = #F1F5F9                      — row backgrounds
+  TEAL_BG      = #E0F2FE                      — callout backgrounds
+  LIGHT_PURPLE = #EDE9FE                      — LUNA callout backgrounds
+  LIGHT_GREEN  = #D1FAE5                      — NOTE callout backgrounds
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 2. PARAGRAPH STYLES — REQUIRED NAMES AND SPECS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Define all of these — do not rename or omit any:
 
+  COMPETITIVE mode — use these exact color assignments:
   body_style       Helvetica 9.5pt DKGRAY TA_JUSTIFY leading=14 spaceAfter=6
   bullet_style     Helvetica 9.5pt DKGRAY TA_LEFT    leading=14 leftIndent=12 spaceAfter=4
-  label_style      Helvetica-Bold 8.5pt BRAND_ACCENT (verify 4.5:1) TA_LEFT leading=13 spaceBefore=8 spaceAfter=3
-  caption_style    Helvetica-Oblique 8pt CGRAY TA_CENTER leading=11 spaceAfter=6
-  footer_style     Helvetica 7.5pt CGRAY TA_CENTER leading=10
-  title_main_style Helvetica-Bold 22pt BRAND_DARK leading=26 spaceAfter=4
-  title_sub_style  Helvetica 10pt BRAND_ACCENT (verify 4.5:1) leading=14 spaceAfter=6
+  label_style      Helvetica-Bold 8.5pt RED TA_LEFT leading=13 spaceBefore=8 spaceAfter=3
+  caption_style    Helvetica-Oblique 8pt SUBDUE TA_CENTER leading=11 spaceAfter=6
+  footer_style     Helvetica 7.5pt HINT TA_CENTER leading=10
+  title_main_style Helvetica-Bold 22pt NAVY leading=26 spaceAfter=4
+  title_sub_style  Helvetica 10pt RED leading=14 spaceAfter=6
   th_style         Helvetica-Bold 9pt WHITE TA_LEFT leading=12   ← ALL table headers
   td_style         Helvetica 9pt DKGRAY TA_LEFT leading=12
   td_bold_style    Helvetica-Bold 9pt DKGRAY TA_LEFT leading=12
@@ -177,13 +191,6 @@ COMPETITIVE MODE — required sections (in order)
     • Screenshots inline after each subsection
     • UNLIKE/UNIQUE callouts after any differentiating finding
 
-  HOW IT MATCHES UP (head-to-head vs. Newsela)
-    • label_style subsection headers
-    • bullet_style lists
-    • Screenshots inline
-    • UNLIKE/UNIQUE callouts
-
-  
   AI [FEATURE NAME]  — or —  NO AI
     ┌ If the product HAS AI features:
     │   • Description paragraph (what the AI does, how it works)
@@ -215,22 +222,28 @@ COMPETITIVE MODE — required sections (in order)
         listing each product area and "No AI found" — this wastes a full page.
 
   ADDITIONAL FEATURES (capabilities with no Newsela equivalent)
+    • Only include this as a standalone section if there are 3+ unique features
+      that don't fit naturally into HOW IT WORKS. Otherwise fold them in there.
     • UNIQUE callout at top
-    • label_style subsection headers
-    • bullet_style lists
-    • Screenshots inline
+    • bullet_style lists (not sub_header per item)
+    • Max 1 screenshot
 
   FREE VS. PREMIUM
     • UNLIKE NEWSELA callout at top
     • Comparison table: colWidths=[3.0in, 1.5in, 1.5in], BRAND_DARK header row
     • Use ✓ / ✗ / "Limited" for availability cells
 
-  KEY STRENGTHS
-    • bullet_style, format: "<b>Strength name</b> — explanation"
+  KEY STRENGTHS  (5–9 items)
+    • bullet_style, format: "• <b><font color=BRAND_ACCENT>Title</font></b> — explanation"
+    • One line per item — title in brand accent color, explanation continues on same line.
+    • This is exactly how NoRedInk does it. Do NOT use sub_header + paragraph per item.
+    • Lead with the most strategic / differentiating strengths first.
 
-  KNOWN LIMITATIONS
-    • bullet_style, format: "<b>Limitation name</b> — explanation"
-    • Always include AI calibration findings from live testing
+  KNOWN LIMITATIONS  (5–8 items)
+    • Same bullet_style format as KEY STRENGTHS.
+    • Lead with the most impactful limitations for Newsela's competitive position.
+    • If AI was tested and not found, "No AI" should be item 2
+      (after the biggest structural gap, e.g., no adaptive reading levels).
 
   FOOTER
     • HRFlowable width=W thickness=0.5 color=MGRAY spaceAfter=6
@@ -343,8 +356,8 @@ ALL tables in both modes must follow this pattern:
 9. FINAL CHECKS BEFORE WRITING ANY CODE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 □ MODE is set to COMPETITIVE or NEWSELA_OVERVIEW
-□ Every text color passes WCAG 4.5:1 against its background — calculate, don't guess
-□ No textColor set to any color that hasn't been contrast-verified
+□ All colors copied exactly from the fixed palette in section 1 — no new hex values invented
+□ COMPETITIVE mode uses NAVY/RED/DKGRAY/SUBDUE/HINT — not any other colors
 □ All table cells are Paragraph objects — zero plain strings in any table
 □ snap_label_style used (not td_bold_style) in snapshot table column 0
 □ All screenshots placed inline, not at the end
@@ -354,4 +367,17 @@ ALL tables in both modes must follow this pattern:
 □ NEWSELA_OVERVIEW: callout labels are LUNA, KEY, or default (NOTE)
 □ Footer is the last element in story[]
 □ Script runs with: python3 generate_[ProductName]_pdf.py
-□ Output path: [ProductName]/[ProductName]_Overview.pdf
+□ Output path: [ProductName]/[ProductName]_Competitive_Intelligence.pdf
+  (Note: NoRedInk script is the canonical reference — read it before writing any code)
+
+COMPETITIVE MODE ONLY — density check:
+□ Estimated page count is 12–15 pages (reference: NoRedInk is ~13 pages with ~15 screenshots)
+□ Every major product area in HOW IT WORKS has at least 1 screenshot
+□ Key differentiating features have 2–3 screenshots or a side_by_side pair
+□ No PageBreak() between adjacent sections — content flows naturally
+□ KEY STRENGTHS: 5–9 items as bullet_style "• **Title** — explanation" (NOT sub_header + paragraph)
+□ KNOWN LIMITATIONS: 5–8 items, same bullet_style format
+□ AI section: if no AI found, used short "NO AI" section — did NOT generate a full comparison table
+□ LIVE AI TEST FINDINGS: omitted entirely if no AI was found
+□ No facts repeated across sections
+
