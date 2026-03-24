@@ -13,10 +13,8 @@ Saved in:    [ProductName]/ folder alongside screenshots
 CANONICAL REFERENCE IMPLEMENTATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 COMPETITIVE mode → copy architecture from:
-  /Users/rainna.erikson/Desktop/Claude/Competitive Agents/NoRedInk/generate_noredink_pdf.py
+NoRedInk_Expert_Report.md
 
-NEWSELA_OVERVIEW mode → copy architecture from:
-  /Users/rainna.erikson/Desktop/Claude/newsela_pics/Newsela/generate_newsela_main_app_pdf.py
 
 Do not deviate from the structure of the relevant reference file.
 
