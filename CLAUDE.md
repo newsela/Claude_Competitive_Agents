@@ -1,5 +1,12 @@
 # Project Rules
 
+## Session Bootstrap                                                                                
+                                                            
+  Before writing any report script:
+  1. Read `Competitive Analysis Newsela Prompt` in full
+  2. Copy `generate_noredink_pdf.py` as your starting file
+  3. Do not deviate from the section structure, helper signatures, or color palette
+
 ## Accessibility — WCAG 2.1 AA Color Contrast (NON-NEGOTIABLE)
 
 All generated documents (PDFs, reports, HTML) MUST meet WCAG 2.1 AA minimum contrast ratios **before** writing or running any code. Do not produce a first draft and fix it after feedback.
