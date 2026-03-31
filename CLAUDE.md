@@ -6,6 +6,7 @@
   1. Read `Competitive Analysis Newsela Prompt` in full
   2. Copy `generate_noredink_pdf.py` as your starting file
   3. Do not deviate from the section structure, helper signatures, or color palette
+  4. Do not add additional content in order to add page count. If the report ends up being shorter, that is okay. 
 
 ## Accessibility — WCAG 2.1 AA Color Contrast (NON-NEGOTIABLE)
 
